@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+
+    <link rel="icon" type="image/jpeg" href="logo.jfif">
+    <title>Will You Forgive Me? ❤️</title> 
+
+
+    <link rel="stylesheet" href="style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+
+<div class="container" id="mainBox">
+
+    <h1 class="title">
+        One Last Thing... ❤️
+    </h1>
+
+    <div class="letter-box">
+
+        <p>
+            I'm sincerely sorry for my mistakes.
+        </p>
+
+        <p>
+            I know I can't change the past, but I can promise to learn from it and become a better person.
+        </p>
+
+        <p>
+            Every memory with you is priceless, and I don't want our story to end here.
+        </p>
+
+        <p>
+            Thank you for taking the time to read everything.
+        </p>
+
+        <h2 style="margin-top:25px;">
+            Will You Forgive Me? ❤️
+        </h2>
+
+    </div>
+
+    <div class="buttons">
+
+        <button class="yes-btn" onclick="forgiveMe()">
+            💖 Yes, I Forgive You
+        </button>
+
+        <button
+            class="no-btn"
+            id="noBtn"
+            onmouseover="moveButton()">
+            💔 No
+        </button>
+
+    </div>
+
+</div>
+
+<script>
+
+function moveButton(){
+
+    const btn = document.getElementById("noBtn");
+
+    const x = Math.random() * (window.innerWidth - 170);
+
+    const y = Math.random() * (window.innerHeight - 80);
+
+    btn.style.position="fixed";
+    btn.style.left=x+"px";
+    btn.style.top=y+"px";
+}
+
+function forgiveMe(){
+
+    confetti({
+        particleCount:250,
+        spread:180,
+        origin:{y:0.6}
+    });
+
+    document.body.innerHTML=`
+
+    <div style="height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    background:linear-gradient(135deg,#ff758c,#ff7eb3);
+    color:white;
+    font-family:Poppins,sans-serif;
+    text-align:center;
+    padding:20px;">
+
+    <h1 style="font-size:55px;">
+    ❤️ Thank You ❤️
+    </h1>
+
+    <h2>
+    You gave us another chance.
+    </h2>
+
+    <p style="max-width:700px;
+    font-size:22px;
+    line-height:1.8;">
+
+    Thank you for believing in me once again.
+
+    I promise to cherish every moment with you,
+    respect your heart,
+    support you through every chapter of life,
+    and never stop reminding you how special you are.
+
+    I hope this is not the end...
+
+    I hope this is the beginning of many more beautiful memories together.
+
+    ❤️
+
+    </p>
+
+    <h1 style="margin-top:25px;">
+    I Love You ❤️
+    </h1>
+
+    </div>
+
+    `;
+
+}
+
+</script>
+
+</body>
+</html>
